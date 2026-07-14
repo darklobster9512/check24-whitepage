@@ -140,9 +140,9 @@
 @theme inline {
   --color-primary-dark: var(--primary-dark);
   --color-surface: var(--surface);
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
-  --font-serif: "Libre Baskerville", Georgia, serif;
-  --font-display: "Libre Baskerville", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
