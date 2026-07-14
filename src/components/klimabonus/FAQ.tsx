@@ -2,12 +2,26 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { SectionHeader } from "./About";
 
 const items = [
-  { q: "Was kostet der Investment-Check?", a: "Der Investment-Check ist für Sie kostenfrei und vollkommen unverbindlich. Es entstehen keine Beratungshonorare." },
-  { q: "Muss ich Volksbank-Kundin oder -Kunde sein?", a: "Nein. Der Investment-Check steht auch Interessentinnen und Interessenten offen, die aktuell keine Kundenbeziehung zur Volksbank haben." },
-  { q: "Welche Fonds werden empfohlen?", a: "Die Empfehlung erfolgt auf Basis Ihres persönlichen Profils und stammt aus dem Fondsangebot der Volksbank – etwa gemanagte Fondslösungen, thematische Fonds oder Fondssparpläne. Fondsveranlagungen unterliegen Marktrisiken." },
-  { q: "Gibt es auch nachhaltige Fonds?", a: "Ja. Auf Wunsch werden Nachhaltigkeitspräferenzen (z. B. ESG-Kriterien) im Gespräch berücksichtigt und in die Empfehlung einbezogen." },
-  { q: "Muss ich nach dem Gespräch sofort ein Depot eröffnen?", a: "Nein. Sie erhalten eine Empfehlung und entscheiden anschließend in Ruhe, ob und wann Sie weitere Schritte setzen möchten." },
-  { q: "Wie lange dauert das Gespräch?", a: "In der Regel dauert der Investment-Check ca. 20 Minuten. Je nach individuellem Beratungsbedarf kann das Gespräch auch länger geführt werden." },
+  {
+    q: "Wer kann an der 200 €-Aktion teilnehmen?",
+    a: "Teilnahmeberechtigt sind volljährige Personen mit Hauptwohnsitz in Österreich und einer gültigen österreichischen IBAN – sowohl Neu- als auch Bestandskund:innen.",
+  },
+  {
+    q: "Was kostet die Teilnahme?",
+    a: "Die Teilnahme ist kostenlos und unverbindlich. Es entstehen keine Gebühren und es besteht keine Verpflichtung zum Abschluss weiterer Produkte.",
+  },
+  {
+    q: "Wann wird der Bonus ausgezahlt?",
+    a: "Nach erfolgreicher Verifizierung der Identität und der Bankverbindung wird der Bonus in der Regel innerhalb weniger Werktage auf das angegebene österreichische Konto überwiesen.",
+  },
+  {
+    q: "Welche Daten werden benötigt?",
+    a: "Für die Bearbeitung werden Name, Anschrift, Kontaktdaten sowie eine gültige österreichische IBAN benötigt. Die Angaben werden ausschließlich zur Bonus-Auszahlung verwendet.",
+  },
+  {
+    q: "Was passiert nach dem 01.08.2026?",
+    a: "Nach Ablauf der Frist ist keine Anmeldung mehr möglich. Bis dahin eingereichte, vollständig verifizierte Teilnahmen werden regulär bearbeitet.",
+  },
 ];
 
 export function FAQ() {

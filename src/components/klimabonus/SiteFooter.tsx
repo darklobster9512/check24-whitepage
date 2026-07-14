@@ -8,17 +8,17 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-3">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <VolksbankMark className="h-8 w-8 text-sm" />
+              <VolksbankMark className="h-8 w-10 text-xs" />
               <div className="leading-tight">
-                <div className="text-sm font-semibold">Volksbank Investment-Check</div>
+                <div className="text-sm font-semibold">CHECK24 Bonus-Info</div>
                 <div className="text-[11px] uppercase tracking-wider opacity-70">Informationsseite</div>
               </div>
             </div>
             <p className="mt-4 max-w-md text-secondary-foreground/75">
-              Diese Website ist eine unabhängige Informationsseite zum Volksbank
-              Investment-Check und keine offizielle Seite der Volksbank. Verbindliche
-              Auskünfte, Beratung und Depoteröffnungen erfolgen ausschließlich in
-              der jeweiligen Volksbank-Filiale bzw. über volksbank.at.
+              Diese Website ist eine unabhängige Informationsseite zur CHECK24
+              200 €-Bonus-Aktion und keine offizielle Seite der CHECK24-Gruppe.
+              Verbindliche Teilnahmebedingungen und die Auszahlung erfolgen
+              ausschließlich über CHECK24 Österreich.
             </p>
           </div>
           <div>
@@ -31,7 +31,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-10 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-secondary-foreground/70 md:flex-row">
-          <p>© {new Date().getFullYear()} Volksbank Investment-Check · Informationsseite</p>
+          <p>© {new Date().getFullYear()} CHECK24 Bonus-Info · Informationsseite</p>
           <p>Alle Angaben ohne Gewähr</p>
         </div>
       </div>
