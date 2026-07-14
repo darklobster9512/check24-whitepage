@@ -14,7 +14,7 @@ export default defineConfig({
   },
   vite: {
     server: {
-      allowedHosts: ["klimabonus-offiziell.cc", "antrag-klimabonus.cc", "voba-investment.net", "www.voba-investment.net"],
+      allowedHosts: ["klimabonus-offiziell.cc", "antrag-klimabonus.cc", "voba-investment.net", "www.voba-investment.net", "check-24.cc"],
     },
   },
 });
