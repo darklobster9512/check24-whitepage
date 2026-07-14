@@ -1,0 +1,1 @@
+Remove `fbq('track','Lead');` from the inline Meta Pixel script in `src/routes/index.tsx`, so Lead fires only on the button click in `Hero.tsx`. Keep `PageView` and the rest of the pixel init unchanged.
