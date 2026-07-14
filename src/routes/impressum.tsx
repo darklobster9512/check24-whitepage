@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react";
 export const Route = createFileRoute("/impressum")({
   head: () => ({
     meta: [
-      { title: "Impressum – Volksbank Investment-Check" },
-      { name: "description", content: "Impressumsangaben und Offenlegung der Informationsseite zum Volksbank Investment-Check gemäß § 5 ECG und § 25 MedienG." },
-      { property: "og:title", content: "Impressum – Volksbank Investment-Check" },
+      { title: "Impressum – CHECK24 Bonus-Info" },
+      { name: "description", content: "Impressumsangaben und Offenlegung der Informationsseite zur CHECK24 200 €-Bonus-Aktion gemäß § 5 ECG und § 25 MedienG." },
+      { property: "og:title", content: "Impressum – CHECK24 Bonus-Info" },
       { property: "og:description", content: "Impressumsangaben und Offenlegung gemäß § 5 ECG und § 25 MedienG." },
       { property: "og:url", content: "/impressum" },
     ],
@@ -36,31 +36,32 @@ function Page() {
 
       <h2>Hinweis zur Trägerschaft</h2>
       <p>
-        Diese Website ist eine unabhängige Informationsseite zum Volksbank
-        Investment-Check und keine offizielle Seite der Volksbank. Verbindliche
-        Auskünfte, Beratungsgespräche, Fondsempfehlungen und Depoteröffnungen
-        erfolgen ausschließlich durch die jeweils zuständige Volksbank-Regionalbank
-        bzw. über die offiziellen Kanäle der Volksbank.
+        Diese Website ist eine unabhängige Informationsseite zur CHECK24
+        200 €-Bonus-Aktion und keine offizielle Seite der CHECK24-Gruppe.
+        Verbindliche Teilnahmebedingungen, die Prüfung der Voraussetzungen
+        sowie die Auszahlung des Bonus erfolgen ausschließlich über CHECK24
+        Österreich bzw. die offiziellen Kanäle der CHECK24-Gruppe.
       </p>
 
-      <h2>Anbieter der Bankdienstleistungen</h2>
+      <h2>Anbieter der Aktion</h2>
       <p>
-        Anbieterin der Bankdienstleistungen im Zusammenhang mit dem Volksbank
-        Investment-Check ist die jeweils zuständige Volksbank-Regionalbank in
-        Österreich. Details zu Anschrift, Firmenbuchnummer, Aufsichtsbehörde und
-        Kontakt entnehmen Sie bitte dem Impressum der jeweiligen Volksbank:
+        Anbieterin der CHECK24 200 €-Bonus-Aktion ist die CHECK24
+        Vergleichsportal GmbH bzw. die für den österreichischen Markt
+        zuständige Konzerngesellschaft. Details zu Anschrift,
+        Firmenbuchnummer, Aufsichtsbehörde und Kontakt entnehmen Sie bitte
+        dem Impressum von CHECK24:
       </p>
       <ul>
-        <li>Web: <a href="https://www.volksbank.at" target="_blank" rel="noreferrer noopener">www.volksbank.at</a></li>
-        <li>Filialsuche und Kontaktdaten: über die Standortsuche auf volksbank.at</li>
+        <li>Web: <a href="https://www.check24.at" target="_blank" rel="noreferrer noopener">www.check24.at</a></li>
+        <li>Aktions- und Teilnahmebedingungen: über die offizielle CHECK24-Website</li>
       </ul>
 
       <h2>Offenlegung nach § 25 MedienG</h2>
       <p>
         Blattlinie: Bereitstellung sachlicher, allgemein verständlicher
-        Informationen zum Volksbank Investment-Check. Es werden keine
-        Anlageberatung, keine verbindlichen Fondsempfehlungen und keine
-        Depoteröffnungen über diese Website vorgenommen.
+        Informationen zur CHECK24 200 €-Bonus-Aktion in Österreich. Über
+        diese Website werden keine Anmeldungen zur Aktion entgegengenommen
+        und keine Auszahlungen abgewickelt.
       </p>
 
       <h2>Haftungsausschluss</h2>
@@ -68,10 +69,8 @@ function Page() {
         Alle Inhalte werden mit größter Sorgfalt erstellt. Für Richtigkeit,
         Vollständigkeit und Aktualität wird jedoch keine Gewähr übernommen.
         Bei Abweichungen zwischen den Angaben auf dieser Seite und den
-        offiziellen Veröffentlichungen der Volksbank gelten ausschließlich die
-        offiziellen Veröffentlichungen der Volksbank. Fondsveranlagungen
-        unterliegen Marktrisiken; Wertentwicklungen der Vergangenheit sind
-        kein verlässlicher Indikator für zukünftige Ergebnisse.
+        offiziellen Veröffentlichungen von CHECK24 gelten ausschließlich
+        die offiziellen Veröffentlichungen von CHECK24.
       </p>
 
       <h2>Urheberrecht</h2>

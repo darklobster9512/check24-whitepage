@@ -1,21 +1,29 @@
 ## Plan
 
-Neues Favicon, Titel & Beschreibung passend zur CHECK24-Bonus-Info-Seite.
+### 1. CTA-Button → Impressum-Redirect
+`src/components/klimabonus/CtaButton.tsx`: Aus `<button>` einen `<Link to="/impressum">` (TanStack) machen, gleiche Styles, gleiche Varianten. Bestehende Aufrufe (`Hero`, evtl. finaler CTA) funktionieren unverändert weiter.
 
-### 1. Favicon generieren
-- `imagegen` (premium, transparent) → `public/favicon.png`, 512×512
-- Motiv: quadratisches Markenzeichen im CHECK24-Stil — gelbes Quadrat mit weißem großem "24", darüber kleiner blauer "check"-Schriftzug; klar & lesbar bei 16 px.
-- Alte Referenz in `src/routes/__root.tsx` (`/favicon.svg`) ersetzen durch `{ rel: "icon", type: "image/png", href: "/favicon.png" }`.
-- `public/favicon.svg` löschen.
+### 2. Rechtstexte auf CHECK24 umstellen
+Alle Volksbank-/Investment-Check-Referenzen ersetzen durch CHECK24 200 €-Bonus-Aktion.
 
-### 2. Titel & Beschreibung aktualisieren
-`src/routes/index.tsx`:
-- Titel: **„CHECK24 200 €-Bonus Österreich 2026 – Aktion, Ablauf & Frist"**
-- Description: **„Alle Infos zur CHECK24 200 €-Bonus-Aktion in Österreich 2026: Teilnahme, Voraussetzungen, Ablauf und Einsendefrist bis 01.08.2026."**
-- `og:title` / `og:description` entsprechend synchron.
+**`src/routes/impressum.tsx`**
+- Meta (title, description, og:*) auf „Impressum – CHECK24 Bonus-Info"
+- Abschnitt „Hinweis zur Trägerschaft": unabhängige Informationsseite zur CHECK24 200 €-Bonus-Aktion, keine offizielle Seite der CHECK24-Gruppe
+- „Anbieter der Bankdienstleistungen" → **„Anbieter der Aktion"**: Aktion wird von CHECK24 Vergleichsportal GmbH betrieben; Links auf `https://www.check24.at`
+- „Offenlegung nach § 25 MedienG": Blattlinie zur CHECK24 200 €-Bonus-Aktion
+- Haftungsausschluss: Verweise auf offizielle CHECK24-Veröffentlichungen; Anlage-/Fondsrisiko-Satz entfernen (nicht anwendbar)
+- Urheberrecht: unverändert (allgemein)
 
-`src/routes/__root.tsx`:
-- `og:site_name` bleibt „CHECK24 Bonus-Info".
+**`src/routes/datenschutz.tsx`**
+- Meta auf CHECK24 Bonus-Info
+- „Zweck der Verarbeitung": Bereitstellung allgemeiner Informationen zur CHECK24 200 €-Bonus-Aktion; keine Anmeldung/Teilnahme/Auszahlung über diese Website
+- Rest (Logfiles, Cookies, Meta-Pixel, Rechte, Beschwerdestelle) inhaltlich unverändert
 
-### Hinweis
-Keine sonstigen Änderungen an Inhalten, Farben oder Layout.
+**`src/routes/barrierefreiheit.tsx`**
+- Meta + Einleitung auf CHECK24 Bonus-Info (statt Volksbank Investment-Check)
+- Rest unverändert
+
+### 3. Kleinigkeiten
+- `SiteFooter.tsx`: Import/Verwendung von `VolksbankMark` beibehalten (rein visuell, wird schon als CHECK24-Mark genutzt) — kein Umbenennen, keine Logikänderung.
+
+Keine Änderungen an Farben, Layout, Home-Content oder Komponentenstruktur außerhalb der genannten Dateien.

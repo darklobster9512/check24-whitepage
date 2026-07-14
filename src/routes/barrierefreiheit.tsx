@@ -4,9 +4,9 @@ import { LegalLayout } from "@/components/klimabonus/LegalLayout";
 export const Route = createFileRoute("/barrierefreiheit")({
   head: () => ({
     meta: [
-      { title: "Barrierefreiheitserklärung – Volksbank Investment-Check" },
-      { name: "description", content: "Barrierefreiheitserklärung der Informationsseite zum Volksbank Investment-Check nach WZG und WCAG 2.1 AA." },
-      { property: "og:title", content: "Barrierefreiheitserklärung – Volksbank Investment-Check" },
+      { title: "Barrierefreiheitserklärung – CHECK24 Bonus-Info" },
+      { name: "description", content: "Barrierefreiheitserklärung der Informationsseite zur CHECK24 200 €-Bonus-Aktion nach WZG und WCAG 2.1 AA." },
+      { property: "og:title", content: "Barrierefreiheitserklärung – CHECK24 Bonus-Info" },
       { property: "og:description", content: "Erklärung zur digitalen Barrierefreiheit nach WZG und WCAG 2.1 AA." },
       { property: "og:url", content: "/barrierefreiheit" },
     ],
@@ -19,7 +19,7 @@ function Page() {
   return (
     <LegalLayout title="Barrierefreiheitserklärung" updated="Juli 2026">
       <p>
-        Der Betreiber dieser Informationsseite zum Volksbank Investment-Check
+        Der Betreiber dieser Informationsseite zur CHECK24 200 €-Bonus-Aktion
         ist bemüht, seine Website im Einklang mit dem österreichischen
         Web-Zugänglichkeits-Gesetz (WZG) in Umsetzung der Richtlinie (EU) 2016/2102
         barrierefrei zugänglich zu machen.

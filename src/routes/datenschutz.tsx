@@ -4,9 +4,9 @@ import { LegalLayout } from "@/components/klimabonus/LegalLayout";
 export const Route = createFileRoute("/datenschutz")({
   head: () => ({
     meta: [
-      { title: "Datenschutzerklärung – Volksbank Investment-Check" },
-      { name: "description", content: "Informationen zur Verarbeitung personenbezogener Daten auf der Informationsseite zum Volksbank Investment-Check gemäß DSGVO." },
-      { property: "og:title", content: "Datenschutzerklärung – Volksbank Investment-Check" },
+      { title: "Datenschutzerklärung – CHECK24 Bonus-Info" },
+      { name: "description", content: "Informationen zur Verarbeitung personenbezogener Daten auf der Informationsseite zur CHECK24 200 €-Bonus-Aktion gemäß DSGVO." },
+      { property: "og:title", content: "Datenschutzerklärung – CHECK24 Bonus-Info" },
       { property: "og:description", content: "Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." },
       { property: "og:url", content: "/datenschutz" },
     ],
@@ -35,9 +35,9 @@ function Page() {
       <h2>Zweck der Verarbeitung</h2>
       <p>
         Diese Website dient ausschließlich der Bereitstellung allgemeiner
-        Informationen zum Volksbank Investment-Check. Über diese Website werden
-        keine verbindlichen Beratungsgespräche geführt, keine Depoteröffnungen
-        vorgenommen und keine Benutzerkonten geführt.
+        Informationen zur CHECK24 200 €-Bonus-Aktion. Über diese Website
+        werden keine Anmeldungen zur Aktion entgegengenommen, keine
+        Auszahlungen abgewickelt und keine Benutzerkonten geführt.
       </p>
 
       <h2>Erhobene Daten</h2>
