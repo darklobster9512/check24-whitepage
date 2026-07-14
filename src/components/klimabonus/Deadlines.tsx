@@ -2,10 +2,10 @@ import { SectionHeader } from "./About";
 
 export function Deadlines() {
   const rows = [
-    { phase: "Dauer", period: "ca. 20 Minuten", note: "Kompakte, strukturierte Standortbestimmung." },
-    { phase: "Kosten", period: "keine", note: "Der Investment-Check ist kostenfrei." },
-    { phase: "Verbindlichkeit", period: "unverbindlich", note: "Keine Verpflichtung zur Depoteröffnung oder Veranlagung." },
-    { phase: "Ort", period: "Filiale oder Video-Beratung", note: "Wählbar nach Ihrem Wunsch bei der Terminvereinbarung." },
+    { phase: "Bonus-Höhe", period: "200 €", note: "Einmalige Auszahlung pro teilnahmeberechtigter Person." },
+    { phase: "Kosten", period: "keine", note: "Die Teilnahme ist kostenlos und unverbindlich." },
+    { phase: "Teilnahmeschluss", period: "01.08.2026", note: "Nach Ablauf der Frist sind keine Anmeldungen mehr möglich." },
+    { phase: "Auszahlung", period: "nach Verifizierung", note: "Überweisung auf eine gültige österreichische IBAN." },
   ];
   return (
     <section id="fristen" className="border-b border-border bg-surface py-16 md:py-20">
@@ -13,7 +13,7 @@ export function Deadlines() {
         <SectionHeader
           eyebrow="Konditionen"
           title="Rahmenbedingungen im Überblick"
-          description="Der Investment-Check ist bewusst niedrigschwellig gestaltet – kostenlos, unverbindlich und zeitlich überschaubar."
+          description="Die Aktion ist bewusst niedrigschwellig gestaltet – kostenlos, unverbindlich und zeitlich klar begrenzt."
         />
 
         <div className="mt-8 rounded-sm border border-border bg-background p-6 md:p-8">
@@ -21,11 +21,11 @@ export function Deadlines() {
             <div>
               <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Kernpunkte</div>
               <div className="mt-1 text-3xl font-semibold text-foreground">
-                Kostenlos. Unverbindlich. Persönlich.
+                200 €. Kostenlos. Bis 01.08.2026.
               </div>
             </div>
             <div className="text-sm text-muted-foreground">
-              Format: <span className="font-medium text-foreground">Filiale oder Video-Beratung</span>
+              Auszahlung: <span className="font-medium text-foreground">per Überweisung auf AT-IBAN</span>
             </div>
           </div>
         </div>
