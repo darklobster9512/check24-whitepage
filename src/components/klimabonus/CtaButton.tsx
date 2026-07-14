@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 
-// Zielaktion wird später ergänzt – aktuell bewusst ohne onClick/href/Redirect.
+// CTA leitet zur Impressum-Seite weiter.
 export function CtaButton({
   children,
   variant = "primary",
@@ -15,8 +16,8 @@ export function CtaButton({
       ? "bg-accent text-accent-foreground hover:bg-accent/90"
       : "bg-primary text-primary-foreground hover:bg-primary/90";
   return (
-    <button type="button" className={`${base} ${styles}`}>
+    <Link to="/impressum" className={`${base} ${styles}`}>
       {children}
-    </button>
+    </Link>
   );
 }
