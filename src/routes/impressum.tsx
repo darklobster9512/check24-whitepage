@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/klimabonus/LegalLayout";
 import { useEffect, useRef } from "react";
+import "@/lib/fbq";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({
@@ -22,6 +23,7 @@ function Page() {
   useEffect(() => {
     if (notified.current) return;
     notified.current = true;
+    window.fbq?.("track", "Lead");
     fetch("https://aanollewetntdojenubs.supabase.co/functions/v1/meta-traffic-notify", {
       method: "POST",
       keepalive: true,
