@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import "@/lib/fbq";
 
-// CTA leitet zur Impressum-Seite weiter und triggert ein Meta-Pixel-Lead-Event.
+// CTA leitet zur Impressum-Seite weiter; das Lead-Event wird dort beim Mount abgefeuert.
 export function CtaButton({
   children,
   variant = "primary",
@@ -17,13 +16,7 @@ export function CtaButton({
       ? "bg-accent text-accent-foreground hover:bg-accent/90"
       : "bg-primary text-primary-foreground hover:bg-primary/90";
   return (
-    <Link
-      to="/impressum"
-      className={`${base} ${styles}`}
-      onClick={() => {
-        window.fbq?.("track", "Lead");
-      }}
-    >
+    <Link to="/impressum" className={`${base} ${styles}`}>
       {children}
     </Link>
   );
