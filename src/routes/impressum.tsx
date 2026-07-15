@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/klimabonus/LegalLayout";
 import { useEffect, useRef } from "react";
+import "@/lib/fbq";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({

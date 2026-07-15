@@ -1,13 +1,9 @@
 ## Plan
 
-### 1. Meta Pixel global einbauen
-`src/routes/__root.tsx`: Im `head()` den Pixel-Loader als `scripts`-Eintrag und das `<noscript>`-Fallback-Bild als `<img>`-Tag im `<body>` (im `RootShell`, nicht im `<head>` – TanStack/parse5 verbietet `<img>` in `<noscript>` im `<head>`).
+### 1. Lead-Event auf Impressum-Seite auslösen
+`src/routes/impressum.tsx`: Im bestehenden `useEffect` (der bereits `meta-traffic-notify` per fetch aufruft) zusätzlich `window.fbq?.("track", "Lead")` aufrufen. Der `notified.current`-Guard verhindert doppeltes Feuern bei Re-Renders/StrictMode. Import `"@/lib/fbq"` hinzufügen für die TypeScript-Deklaration von `window.fbq`.
 
-- `scripts: [{ children: "!function(f,b,e,v,n,t,s){…}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init','4766653096894299'); fbq('track','PageView');" }]`
-- Im `RootShell` direkt nach `<body>` ein `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4766653096894299&ev=PageView&noscript=1" /></noscript>`.
-- TypeScript: kleine `declare global { interface Window { fbq?: (...args: unknown[]) => void } }` (z. B. in `src/lib/fbq.ts`), damit der CTA `window.fbq?.('track','Lead')` typsicher aufrufen kann.
+### 2. Lead-Event vom CTA-Button entfernen
+`src/components/klimabonus/CtaButton.tsx`: `onClick`-Handler und `import "@/lib/fbq"` entfernen. Der Button navigiert nur noch zu `/impressum`; das Lead-Event wird dann dort beim Mount ausgelöst.
 
-### 2. CTA-Button feuert „Lead"
-`src/components/klimabonus/CtaButton.tsx`: `<Link to="/impressum">` behalten, zusätzlich `onClick={() => window.fbq?.('track','Lead')}`. Navigation zu `/impressum` bleibt unverändert; Event wird vor dem Routenwechsel abgesetzt.
-
-Keine weiteren Dateien betroffen.
+Damit feuert das Lead-Event zuverlässig sobald die Impressum-Seite geladen ist – auch wenn Nutzer direkt per URL kommen.
