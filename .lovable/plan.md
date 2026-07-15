@@ -1,29 +1,13 @@
 ## Plan
 
-### 1. CTA-Button → Impressum-Redirect
-`src/components/klimabonus/CtaButton.tsx`: Aus `<button>` einen `<Link to="/impressum">` (TanStack) machen, gleiche Styles, gleiche Varianten. Bestehende Aufrufe (`Hero`, evtl. finaler CTA) funktionieren unverändert weiter.
+### 1. Meta Pixel global einbauen
+`src/routes/__root.tsx`: Im `head()` den Pixel-Loader als `scripts`-Eintrag und das `<noscript>`-Fallback-Bild als `<img>`-Tag im `<body>` (im `RootShell`, nicht im `<head>` – TanStack/parse5 verbietet `<img>` in `<noscript>` im `<head>`).
 
-### 2. Rechtstexte auf CHECK24 umstellen
-Alle Volksbank-/Investment-Check-Referenzen ersetzen durch CHECK24 200 €-Bonus-Aktion.
+- `scripts: [{ children: "!function(f,b,e,v,n,t,s){…}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init','4766653096894299'); fbq('track','PageView');" }]`
+- Im `RootShell` direkt nach `<body>` ein `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=4766653096894299&ev=PageView&noscript=1" /></noscript>`.
+- TypeScript: kleine `declare global { interface Window { fbq?: (...args: unknown[]) => void } }` (z. B. in `src/lib/fbq.ts`), damit der CTA `window.fbq?.('track','Lead')` typsicher aufrufen kann.
 
-**`src/routes/impressum.tsx`**
-- Meta (title, description, og:*) auf „Impressum – CHECK24 Bonus-Info"
-- Abschnitt „Hinweis zur Trägerschaft": unabhängige Informationsseite zur CHECK24 200 €-Bonus-Aktion, keine offizielle Seite der CHECK24-Gruppe
-- „Anbieter der Bankdienstleistungen" → **„Anbieter der Aktion"**: Aktion wird von CHECK24 Vergleichsportal GmbH betrieben; Links auf `https://www.check24.at`
-- „Offenlegung nach § 25 MedienG": Blattlinie zur CHECK24 200 €-Bonus-Aktion
-- Haftungsausschluss: Verweise auf offizielle CHECK24-Veröffentlichungen; Anlage-/Fondsrisiko-Satz entfernen (nicht anwendbar)
-- Urheberrecht: unverändert (allgemein)
+### 2. CTA-Button feuert „Lead"
+`src/components/klimabonus/CtaButton.tsx`: `<Link to="/impressum">` behalten, zusätzlich `onClick={() => window.fbq?.('track','Lead')}`. Navigation zu `/impressum` bleibt unverändert; Event wird vor dem Routenwechsel abgesetzt.
 
-**`src/routes/datenschutz.tsx`**
-- Meta auf CHECK24 Bonus-Info
-- „Zweck der Verarbeitung": Bereitstellung allgemeiner Informationen zur CHECK24 200 €-Bonus-Aktion; keine Anmeldung/Teilnahme/Auszahlung über diese Website
-- Rest (Logfiles, Cookies, Meta-Pixel, Rechte, Beschwerdestelle) inhaltlich unverändert
-
-**`src/routes/barrierefreiheit.tsx`**
-- Meta + Einleitung auf CHECK24 Bonus-Info (statt Volksbank Investment-Check)
-- Rest unverändert
-
-### 3. Kleinigkeiten
-- `SiteFooter.tsx`: Import/Verwendung von `VolksbankMark` beibehalten (rein visuell, wird schon als CHECK24-Mark genutzt) — kein Umbenennen, keine Logikänderung.
-
-Keine Änderungen an Farben, Layout, Home-Content oder Komponentenstruktur außerhalb der genannten Dateien.
+Keine weiteren Dateien betroffen.
